@@ -1,6 +1,7 @@
 Team: Hasan Mustafa, Zain Hameed
 
 Description:
+
 ● Create an aesthetically pleasing and fun 2D side scroller game using the Godot Engine The
 game will be functional and have multiple levels and a score system. The user will be encouraged to play through the levels, defeat enemies along the way, and beat the final boss.
 
