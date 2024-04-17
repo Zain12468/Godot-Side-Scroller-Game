@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://pd0v4g7dkdyc"]
+
+[ext_resource type="Texture2D" uid="uid://cr7o6s51ogm1b" path="res://Test Assets/main_menu_page.jpeg" id="1_kihko"]
+
+[sub_resource type="GDScript" id="GDScript_ivno1"]
+script/source = "extends Node
+
+
+func _on_start_pressed():
+	get_tree().change_scene_to_file(\"res://Scenes/Level 1.tscn\")
+"
+
+[node name="MainMenu" type="Node"]
+script = SubResource("GDScript_ivno1")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -187.0
+offset_top = -285.0
+offset_right = 187.0
+offset_bottom = 285.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_kihko")
+
+[node name="Start" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -462.0
+offset_top = -4.0
+offset_right = -116.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Play Game
+"
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
