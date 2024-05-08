@@ -4,6 +4,7 @@
 
 extends CharacterBody2D
 
+signal healthChanged
 
 const SPEED = 400.0
 const JUMP_VELOCITY = -700.0
@@ -12,6 +13,8 @@ const JUMP_VELOCITY = -700.0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+@export var maxHealth = 3
+@onready var currentHealth: int = 3
 
 func _physics_process(delta):
 	#Animations
@@ -26,7 +29,7 @@ func _physics_process(delta):
 		sprite_2d.animation = 'Jumping'
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("ui_up") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
@@ -35,9 +38,17 @@ func _physics_process(delta):
 	if direction:
 		velocity.x = direction * SPEED
 	else:
-		velocity.x = move_toward(velocity.x, 0, 20)
+		velocity.x = move_toward(velocity.x, 0, 40)
 
 	move_and_slide()
 	var isLeft = velocity.x < 0
 	sprite_2d.flip_h = isLeft
 
+
+func _on_hurtbox_area_entered(area):
+	if area.name == "Hitbox":
+		currentHealth -= 1
+		if currentHealth < 0:
+			currentHealth = maxHealth
+			
+		healthChanged.emit(currentHealth)
