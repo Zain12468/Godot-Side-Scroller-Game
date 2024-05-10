@@ -501,6 +501,7 @@ position = Vector2(208, 540)
 
 [node name="Camera2D" type="Camera2D" parent="Scene Objects/Player"]
 position = Vector2(1, -2)
+process_callback = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 7.0
 
