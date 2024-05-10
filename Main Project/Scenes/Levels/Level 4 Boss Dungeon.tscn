@@ -1,15 +1,16 @@
-[gd_scene load_steps=13 format=3 uid="uid://bb88v8h5ykxye"]
+[gd_scene load_steps=12 format=3 uid="uid://bc1eajfeqf8g8"]
 
-[ext_resource type="Script" path="res://game_manager.gd" id="1_u1lof"]
-[ext_resource type="Texture2D" uid="uid://5w0rk2ine4xp" path="res://Test Assets/Green.png" id="2_c2tra"]
-[ext_resource type="Texture2D" uid="uid://bbdk48eauom62" path="res://Test Assets/Terrain (16x16).png" id="3_3djpm"]
-[ext_resource type="PackedScene" uid="uid://dng1q2dx20ni4" path="res://Scenes/Characters/Player/main_character.tscn" id="4_ip760"]
-[ext_resource type="PackedScene" uid="uid://do7q40y65xn0b" path="res://Scenes/Game Management/finish.tscn" id="5_2u8ki"]
-[ext_resource type="Texture2D" uid="uid://cr7o6s51ogm1b" path="res://Test Assets/main_menu_page.jpeg" id="6_g68v5"]
-[ext_resource type="PackedScene" uid="uid://deuqbeubboi2i" path="res://Scenes/Collectables/collectable.tscn" id="8_to68a"]
+[ext_resource type="Script" path="res://Scenes/Levels/Level 1.gd" id="1_cmxrn"]
+[ext_resource type="Script" path="res://game_manager.gd" id="2_y1bam"]
+[ext_resource type="Texture2D" uid="uid://5w0rk2ine4xp" path="res://Test Assets/Green.png" id="3_o1e0g"]
+[ext_resource type="Texture2D" uid="uid://bbdk48eauom62" path="res://Test Assets/Terrain (16x16).png" id="4_6lwsj"]
+[ext_resource type="PackedScene" uid="uid://dng1q2dx20ni4" path="res://Scenes/Characters/Player/main_character.tscn" id="5_4a88i"]
+[ext_resource type="PackedScene" uid="uid://do7q40y65xn0b" path="res://Scenes/Game Management/finish.tscn" id="6_5r32k"]
+[ext_resource type="PackedScene" uid="uid://deuqbeubboi2i" path="res://Scenes/Collectables/collectable.tscn" id="7_j5elx"]
+[ext_resource type="PackedScene" uid="uid://p2lrseq3ebh6" path="res://Scenes/Game Management/hearts_container.tscn" id="8_f0pj0"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pktsn"]
-texture = ExtResource("3_3djpm")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xkrva"]
+texture = ExtResource("4_6lwsj")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -459,9 +460,9 @@ texture = ExtResource("3_3djpm")
 20:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 20:10/0/physics_layer_0/angular_velocity = 0.0
 
-[sub_resource type="TileSet" id="TileSet_2ycf3"]
+[sub_resource type="TileSet" id="TileSet_e424c"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_pktsn")
+sources/0 = SubResource("TileSetAtlasSource_xkrva")
 
 [sub_resource type="GDScript" id="GDScript_st6de"]
 script/source = "extends Area2D
@@ -473,70 +474,49 @@ func _on_body_entered(body):
 		get_tree().change_scene_to_packed(target_level)
 "
 
-[sub_resource type="GDScript" id="GDScript_ivno1"]
-script/source = "extends Node
-
-
-func _on_start_pressed():
-	get_tree().change_scene_to_file(\"res://Scenes/Level 1.tscn\")
-"
-
-[sub_resource type="PackedScene" id="PackedScene_3rqpv"]
-_bundled = {
-"conn_count": 1,
-"conns": PackedInt32Array(2, 0, 20, 19, 2, 0, 0),
-"editable_instances": [],
-"names": PackedStringArray("MainMenu", "script", "Node", "TextureRect", "anchors_preset", "anchor_right", "anchor_bottom", "offset_left", "offset_top", "offset_right", "offset_bottom", "grow_horizontal", "grow_vertical", "texture", "Start", "anchor_left", "anchor_top", "text", "Button", "_on_start_pressed", "pressed"),
-"node_count": 3,
-"node_paths": [],
-"nodes": PackedInt32Array(-1, -1, 2, 0, -1, 1, 1, 0, 0, 0, 0, 3, 3, -1, 10, 4, 1, 5, 2, 6, 2, 7, 3, 8, 4, 9, 5, 10, 6, 11, 7, 12, 7, 13, 8, 0, 0, 0, 18, 14, -1, 12, 4, 9, 15, 10, 16, 10, 5, 10, 6, 10, 7, 11, 8, 12, 9, 13, 10, 14, 11, 7, 12, 7, 17, 15, 0),
-"variants": [SubResource("GDScript_ivno1"), 15, 1.0, -187.0, -285.0, 187.0, 285.0, 2, ExtResource("6_g68v5"), 8, 0.5, -462.0, -4.0, -116.0, 128.0, "Play Game
-"],
-"version": 3
-}
-
-[node name="Boss" type="Node"]
+[node name="Level 4" type="Node"]
+script = ExtResource("1_cmxrn")
 
 [node name="Game Manager" type="Node" parent="."]
 unique_name_in_owner = true
-script = ExtResource("1_u1lof")
+script = ExtResource("2_y1bam")
 
 [node name="Scene Objects" type="Node" parent="."]
 
 [node name="TextureRect" type="TextureRect" parent="Scene Objects"]
 offset_right = 2517.0
 offset_bottom = 651.0
-texture = ExtResource("2_c2tra")
+texture = ExtResource("3_o1e0g")
 stretch_mode = 1
 
 [node name="TileMap" type="TileMap" parent="Scene Objects"]
 scale = Vector2(3, 3)
-tile_set = SubResource("TileSet_2ycf3")
+tile_set = SubResource("TileSet_e424c")
 format = 2
-layer_0/tile_data = PackedInt32Array(851968, 458752, 0, 851969, 458752, 0, 851970, 458752, 0, 851971, 458752, 0, 851972, 458752, 0, 851973, 458752, 0, 851974, 458752, 0, 851975, 458752, 0, 851976, 458752, 0, 851977, 458752, 0, 851978, 458752, 0, 851979, 458752, 0, 851980, 458752, 0, 851981, 458752, 0, 851982, 458752, 0, 851983, 458752, 0, 851984, 458752, 0, 851985, 458752, 0, 851986, 458752, 0, 851987, 458752, 0, 851988, 458752, 0, 851989, 458752, 0, 851990, 458752, 0, 851991, 458752, 0, 851992, 458752, 0, 917503, 458752, 0, -1, 458752, 1, 65535, 458752, 1, 131071, 458752, 1, 196607, 458752, 1, 262143, 458752, 1, 327679, 458752, 1, 393215, 458752, 1, 458751, 458752, 1, 524287, 458752, 1, 589823, 458752, 1, 655359, 458752, 1, 720895, 458752, 1, 786431, 458752, 1, 851967, 458752, 1, -65536, 458752, 1, -65535, 458752, 1, -65534, 458752, 1, -65533, 458752, 1, -65532, 458752, 1, -65531, 458752, 1, -65530, 458752, 1, -65529, 458752, 1, -65528, 458752, 1, -65527, 458752, 1, -65526, 458752, 1, -65525, 458752, 1, -65524, 458752, 1, -65523, 458752, 1, -65522, 458752, 1, -65521, 458752, 1, -65520, 458752, 1, -65519, 458752, 1, -65518, 458752, 1, -65517, 458752, 1, -65516, 458752, 1, -65515, 458752, 1, -65514, 458752, 1, -65513, 458752, 1, 851993, 458752, 0, 851994, 458752, 0, 851995, 458752, 0, 851996, 458752, 0, 851997, 458752, 0, 851998, 458752, 0, 851999, 458752, 0, 852000, 458752, 0, 852001, 458752, 0, 852002, 458752, 0, 852003, 458752, 0, 852004, 458752, 0, 852005, 458752, 0, 852006, 458752, 0, 852007, 458752, 0, 852008, 458752, 0, -65512, 458752, 1, -65511, 458752, 1, -65510, 458752, 1, -65509, 458752, 1, -65508, 458752, 1, -65507, 458752, 1, -65506, 458752, 1, -65505, 458752, 1, -65504, 458752, 1, -65503, 458752, 1, -65502, 458752, 1, -65501, 458752, 1, -65500, 458752, 1, -65499, 458752, 1, -65498, 458752, 1, -65497, 458752, 1, -65496, 458752, 1, 852009, 458752, 0, 852010, 458752, 0, 852011, 458752, 0, 852012, 458752, 0, 852013, 458752, 0, 852014, 458752, 0, 852015, 458752, 0, 852016, 458752, 0, 852017, 458752, 0, 852018, 458752, 0, 852019, 458752, 0, -65495, 458752, 1, -65494, 458752, 1, -65493, 458752, 1, -65492, 458752, 1, -65491, 458752, 1, -65490, 458752, 1, -65489, 458752, 1, -65488, 458752, 1, -65487, 458752, 1, -65486, 458752, 1, -65485, 458752, 1, -65484, 458752, 1, 52, 458752, 1, 65588, 458752, 1, 131124, 458752, 1, 196660, 458752, 1, 262196, 458752, 1, 327732, 458752, 1, 393268, 458752, 1, 458804, 458752, 1, 524340, 458752, 1, 589876, 458752, 1, 655412, 458752, 1, 720948, 458752, 1, 786484, 458752, 1, 852020, 458752, 1)
+layer_0/tile_data = PackedInt32Array(851968, 458752, 0, 851969, 458752, 0, 851970, 458752, 0, 851971, 458752, 0, 851972, 458752, 0, 851973, 458752, 0, 851974, 458752, 0, 851975, 458752, 0, 851976, 458752, 0, 851977, 458752, 0, 851978, 458752, 0, 851979, 458752, 0, 851980, 458752, 0, 851981, 458752, 0, 851982, 458752, 0, 851983, 458752, 0, 851984, 458752, 0, 851985, 458752, 0, 851986, 458752, 0, 851987, 458752, 0, 851988, 458752, 0, 851989, 458752, 0, 851990, 458752, 0, 851991, 458752, 0, 851992, 458752, 0, 917503, 458752, 0, -1, 458752, 1, 65535, 458752, 1, 131071, 458752, 1, 196607, 458752, 1, 262143, 458752, 1, 327679, 458752, 1, 393215, 458752, 1, 458751, 458752, 1, 524287, 458752, 1, 589823, 458752, 1, 655359, 458752, 1, 720895, 458752, 1, 786431, 458752, 1, 851967, 458752, 1, -65536, 458752, 1, -65535, 458752, 1, -65534, 458752, 1, -65533, 458752, 1, -65532, 458752, 1, -65531, 458752, 1, -65530, 458752, 1, -65529, 458752, 1, -65528, 458752, 1, -65527, 458752, 1, -65526, 458752, 1, -65525, 458752, 1, -65524, 458752, 1, -65523, 458752, 1, -65522, 458752, 1, -65521, 458752, 1, -65520, 458752, 1, -65519, 458752, 1, -65518, 458752, 1, -65517, 458752, 1, -65516, 458752, 1, -65515, 458752, 1, -65514, 458752, 1, -65513, 458752, 1, 851993, 458752, 0, 851994, 458752, 0, 851995, 458752, 0, 851996, 458752, 0, 851997, 458752, 0, 851998, 458752, 0, 851999, 458752, 0, 852000, 458752, 0, 852001, 458752, 0, 852002, 458752, 0, 852003, 458752, 0, 852004, 458752, 0, 852005, 458752, 0, 852006, 458752, 0, 852007, 458752, 0, 852008, 458752, 0, -65512, 458752, 1, -65511, 458752, 1, -65510, 458752, 1, -65509, 458752, 1, -65508, 458752, 1, -65507, 458752, 1, -65506, 458752, 1, -65505, 458752, 1, -65504, 458752, 1, -65503, 458752, 1, -65502, 458752, 1, -65501, 458752, 1, -65500, 458752, 1, -65499, 458752, 1, -65498, 458752, 1, -65497, 458752, 1, -65496, 458752, 1, 852009, 458752, 0, 852010, 458752, 0, 852011, 458752, 0, 852012, 458752, 0, 852013, 458752, 0, 852014, 458752, 0, 852015, 458752, 0, 852016, 458752, 0, 852017, 458752, 0, 852018, 458752, 0, 852019, 458752, 0, -65495, 458752, 1, -65494, 458752, 1, -65493, 458752, 1, -65492, 458752, 1, -65491, 458752, 1, -65490, 458752, 1, -65489, 458752, 1, -65488, 458752, 1, -65487, 458752, 1, -65486, 458752, 1, -65485, 458752, 1, -65484, 458752, 1, 52, 458752, 1, 65588, 458752, 1, 131124, 458752, 1, 196660, 458752, 1, 262196, 458752, 1, 327732, 458752, 1, 393268, 458752, 1, 458804, 458752, 1, 524340, 458752, 1, 589876, 458752, 1, 655412, 458752, 1, 720948, 458752, 1, 786484, 458752, 1, 852020, 458752, 1, 786467, 393216, 1, 720931, 393216, 1, 720932, 524288, 1, 786468, 524288, 1)
 
-[node name="Player" parent="Scene Objects" instance=ExtResource("4_ip760")]
-position = Vector2(-138, 80)
+[node name="Player" parent="Scene Objects" instance=ExtResource("5_4a88i")]
+position = Vector2(208, 540)
 
 [node name="Camera2D" type="Camera2D" parent="Scene Objects/Player"]
-position = Vector2(314, 494)
+position = Vector2(1, -2)
 position_smoothing_enabled = true
 position_smoothing_speed = 7.0
 
 [node name="Collectables" type="Node" parent="Scene Objects"]
 
-[node name="Finish" parent="Scene Objects" instance=ExtResource("5_2u8ki")]
+[node name="Finish" parent="Scene Objects" instance=ExtResource("6_5r32k")]
 position = Vector2(1952, 589)
 script = SubResource("GDScript_st6de")
-target_level = SubResource("PackedScene_3rqpv")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="Panel" type="Panel" parent="UI"]
-offset_left = 21.0
-offset_top = 16.0
-offset_right = 229.0
-offset_bottom = 93.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_bottom = 50.0
+grow_horizontal = 2
 
 [node name="ScoreLabel" type="Label" parent="UI/Panel"]
 layout_mode = 1
@@ -550,13 +530,22 @@ text = "Points: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Collectable" parent="." instance=ExtResource("8_to68a")]
+[node name="Collectable" parent="." instance=ExtResource("7_j5elx")]
 position = Vector2(750, 514)
 
-[node name="Collectable2" parent="." instance=ExtResource("8_to68a")]
+[node name="Collectable2" parent="." instance=ExtResource("7_j5elx")]
 position = Vector2(910, 521)
 
-[node name="Collectable3" parent="." instance=ExtResource("8_to68a")]
+[node name="Collectable3" parent="." instance=ExtResource("7_j5elx")]
 position = Vector2(1140, 507)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HeartsContainer" parent="CanvasLayer" instance=ExtResource("8_f0pj0")]
+offset_left = 5.0
+offset_top = 10.0
+offset_right = 5.0
+offset_bottom = 10.0
+scale = Vector2(3, 3)
 
 [connection signal="body_entered" from="Scene Objects/Finish" to="Scene Objects/Finish" method="_on_body_entered"]

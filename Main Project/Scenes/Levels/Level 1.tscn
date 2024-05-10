@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bbdk48eauom62" path="res://Test Assets/Terrain (16x16).png" id="3_ssrl0"]
 [ext_resource type="PackedScene" uid="uid://dng1q2dx20ni4" path="res://Scenes/Characters/Player/main_character.tscn" id="4_shit0"]
 [ext_resource type="PackedScene" uid="uid://do7q40y65xn0b" path="res://Scenes/Game Management/finish.tscn" id="5_2m082"]
-[ext_resource type="PackedScene" uid="uid://f76lu85xwdln" path="res://Scenes/Levels/Level 2.tscn" id="7_fqohm"]
+[ext_resource type="PackedScene" uid="uid://xqv4fa5ckbwe" path="res://Scenes/Levels/Level 2.tscn" id="7_fqohm"]
 [ext_resource type="PackedScene" uid="uid://deuqbeubboi2i" path="res://Scenes/Collectables/collectable.tscn" id="7_t7nnl"]
 [ext_resource type="PackedScene" uid="uid://p2lrseq3ebh6" path="res://Scenes/Game Management/hearts_container.tscn" id="8_be0ij"]
 
