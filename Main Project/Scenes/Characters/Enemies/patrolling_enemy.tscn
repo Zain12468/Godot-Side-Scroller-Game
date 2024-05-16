@@ -100,7 +100,7 @@ radius = 25.0
 height = 62.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n8ci6"]
-radius = 18.0
+radius = 25.0
 height = 54.0
 
 [node name="Patrolling Enemy" type="CharacterBody2D"]
@@ -115,7 +115,7 @@ scale = Vector2(2.375, 2.46875)
 sprite_frames = SubResource("SpriteFrames_uichb")
 animation = &"running"
 autoplay = "running"
-frame_progress = 0.434559
+frame_progress = 0.949335
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(12, 23)
