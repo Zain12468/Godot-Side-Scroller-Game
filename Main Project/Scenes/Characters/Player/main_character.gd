@@ -16,6 +16,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @export var maxHealth = 3
 @onready var currentHealth: int = 3
 
+#
+
 func _physics_process(delta):
 	#Animations
 	if (velocity.x > 1 || velocity.x < -1 ):
@@ -43,7 +45,6 @@ func _physics_process(delta):
 	move_and_slide()
 	var isLeft = velocity.x < 0
 	sprite_2d.flip_h = isLeft
-
 
 func _on_hurtbox_area_entered(area):
 	if area.name == "Hitbox":

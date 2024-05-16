@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://boytx0r8lrx4e" path="res://Test Assets/Run (32x32).png" id="4_ghvc8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p7w5j"]
+height = 23.077
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4tqw4"]
 atlas = ExtResource("2_2k7jg")
@@ -194,14 +195,14 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nc1l8"]
-radius = 14.0
-height = 48.0
+radius = 17.0
+height = 40.0
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_nk5ns")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.125031, 0.24992)
+position = Vector2(1, 2)
 scale = Vector2(1.625, 1.625)
 shape = SubResource("CapsuleShape2D_p7w5j")
 
@@ -213,8 +214,11 @@ animation = &"Idle"
 autoplay = "Idle"
 
 [node name="Hurtbox" type="Area2D" parent="."]
+position = Vector2(1, 3)
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(0, 3)
 shape = SubResource("CapsuleShape2D_nc1l8")
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
