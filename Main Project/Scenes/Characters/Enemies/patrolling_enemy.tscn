@@ -96,17 +96,17 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f53cx"]
-radius = 25.0
+radius = 26.0
 height = 62.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n8ci6"]
-radius = 25.0
+radius = 26.0
 height = 54.0
 
 [node name="Patrolling Enemy" type="CharacterBody2D"]
 position = Vector2(-10, -24)
-collision_layer = 2
-collision_mask = 2
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_7np3j")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -122,6 +122,7 @@ position = Vector2(12, 23)
 shape = SubResource("CapsuleShape2D_f53cx")
 
 [node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 visibility_layer = 2
