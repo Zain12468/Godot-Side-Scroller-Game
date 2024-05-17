@@ -554,6 +554,6 @@ offset_bottom = 10.0
 scale = Vector2(3, 3)
 
 [node name="Patrolling Enemy" parent="." instance=ExtResource("10_6q0d8")]
-position = Vector2(591, 567)
+position = Vector2(571, 567)
 
 [connection signal="body_entered" from="Scene Objects/Finish" to="Scene Objects/Finish" method="_on_body_entered"]
