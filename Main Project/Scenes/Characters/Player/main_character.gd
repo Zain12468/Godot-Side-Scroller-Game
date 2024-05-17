@@ -49,7 +49,7 @@ func _physics_process(delta):
 func _on_hurtbox_area_entered(area):
 	if area.name == "Hitbox":
 		currentHealth -= 1
-		if currentHealth < 0:
-			currentHealth = maxHealth
+		if currentHealth < 1:
+			get_tree().change_scene_to_file("res://Scenes/Levels/Level 1.tscn")
 			
 		healthChanged.emit(currentHealth)

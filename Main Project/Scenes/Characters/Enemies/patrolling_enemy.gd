@@ -57,3 +57,10 @@ func flip():
 		SPEED = abs(SPEED)
 	else:
 		SPEED = abs(SPEED) * -1
+
+
+func _on_hurtbox_area_entered(area):
+	if area == $"Hitbox": return
+	sprite_2d.self_modulate = Color("red")
+	await get_tree().create_timer(0.25).timeout
+	queue_free()
