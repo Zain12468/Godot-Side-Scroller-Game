@@ -15,6 +15,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @export var maxHealth = 3
 @onready var currentHealth: int = 3
+@export var knockbackPower: int = 500
 
 #
 
@@ -53,3 +54,13 @@ func _on_hurtbox_area_entered(area):
 			get_tree().change_scene_to_file("res://Scenes/Levels/Level 1.tscn")
 			
 		healthChanged.emit(currentHealth)
+		knockback(area.get_parent().velocity)
+
+func knockback(enemyVelocity: Vector2):
+	var knockbackDirection = (enemyVelocity - velocity).normalized() * knockbackPower
+	velocity = knockbackDirection
+	print_debug(velocity)
+	print_debug(position)
+	move_and_slide()
+	print_debug(position)
+	print_debug(" ")
