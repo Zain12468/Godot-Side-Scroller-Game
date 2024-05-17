@@ -7,7 +7,7 @@ extends CharacterBody2D
 signal healthChanged
 
 const SPEED = 400.0
-const JUMP_VELOCITY = -700.0
+const JUMP_VELOCITY = -750.0
 @onready var sprite_2d = $Sprite2D
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
