@@ -59,8 +59,5 @@ func _on_hurtbox_area_entered(area):
 func knockback(enemyVelocity: Vector2):
 	var knockbackDirection = (enemyVelocity - velocity).normalized() * knockbackPower
 	velocity = knockbackDirection
-	print_debug(velocity)
-	print_debug(position)
 	move_and_slide()
-	print_debug(position)
-	print_debug(" ")
+

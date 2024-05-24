@@ -1,23 +1,18 @@
 extends CharacterBody2D
 
-#FLip if it touches a wall
 
-var SPEED = 150.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-var facing_right = true
 var startPosition
 var endPosition
 
 @onready var sprite_2d = $AnimatedSprite2D
+@export var speed = 150
 @export var limit = 0.5
-@export var xOffset = 25
-@export var raycastDistance = 37
-
 
 
 func _ready():
 	startPosition = position
-	endPosition = startPosition + Vector2(0, 3*16)
+	endPosition = startPosition + Vector2(500, 0)
 
 func changeDirection():
 	var tempEnd = endPosition
@@ -25,10 +20,11 @@ func changeDirection():
 	startPosition = tempEnd
 
 func updateVelocity():
-	var moveDirection = endPosition - position
+	var moveDirection = (endPosition - position)
 	if moveDirection.length() < limit:
 		changeDirection()
-	velocity = moveDirection.normalized*SPEED
+	velocity = moveDirection.normalized() * speed
+
 
 func _physics_process(delta):
 	#Animations
@@ -36,27 +32,17 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		
-	if !$RayCast2D.is_colliding() && is_on_floor():
-		flip()
-		
-	velocity.x = SPEED
+	updateVelocity()
 	move_and_slide()
 	handleCollision()
+	var isLeft = velocity.x < 0
+	sprite_2d.flip_h = isLeft
 	
 func handleCollision():
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
 		var collider = collision.get_collider()
 
-
-func flip():
-	#Flips the player
-	facing_right = !facing_right
-	scale.x = abs(scale.x) + -1
-	if facing_right:
-		SPEED = abs(SPEED)
-	else:
-		SPEED = abs(SPEED) * -1
 
 
 func _on_hurtbox_area_entered(area):
