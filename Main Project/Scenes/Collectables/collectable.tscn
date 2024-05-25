@@ -1,6 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://deuqbeubboi2i"]
-
-[ext_resource type="Texture2D" uid="uid://cjjl0oseiivbv" path="res://Assets/glowing pixlated crystal.png" id="1_pfylj"]
+[gd_scene load_steps=3 format=3 uid="uid://deuqbeubboi2i"]
 
 [sub_resource type="GDScript" id="GDScript_maadm"]
 script/source = "extends Area2D
@@ -27,6 +25,5 @@ shape = SubResource("CircleShape2D_hqe23")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(142, 70)
 scale = Vector2(0.182701, 0.140935)
-texture = ExtResource("1_pfylj")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

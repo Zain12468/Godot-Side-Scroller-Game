@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjjl0oseiivbv"
-path="res://.godot/imported/glowing pixlated crystal.png-40f38d6ef1ff785aa5ebf5b852a4c1cb.ctex"
+uid="uid://bdie0djegdqih"
+path="res://.godot/imported/Untitled-2 (2).png-73c8925af805a9e4b477d65fbc254275.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/glowing pixlated crystal.png"
-dest_files=["res://.godot/imported/glowing pixlated crystal.png-40f38d6ef1ff785aa5ebf5b852a4c1cb.ctex"]
+source_file="res://Assets/Backgrounds/Untitled-2 (2).png"
+dest_files=["res://.godot/imported/Untitled-2 (2).png-73c8925af805a9e4b477d65fbc254275.ctex"]
 
 [params]
 

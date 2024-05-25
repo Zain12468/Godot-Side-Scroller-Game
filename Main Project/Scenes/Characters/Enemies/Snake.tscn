@@ -1,0 +1,95 @@
+[gd_scene load_steps=14 format=3 uid="uid://cg1j7xeewaf1y"]
+
+[ext_resource type="Script" path="res://Scenes/Characters/Enemies/Snake.gd" id="1_7np3j"]
+[ext_resource type="Texture2D" uid="uid://cxejt8l2dmvus" path="res://Assets/Characters/Snake asset /snake asset1.png" id="2_pmi76"]
+[ext_resource type="Texture2D" uid="uid://dq0ny4n1puxkq" path="res://Assets/Characters/Snake asset /snake asset2.png" id="3_hyjwu"]
+[ext_resource type="Texture2D" uid="uid://c1pnk5pl7082n" path="res://Assets/Characters/Snake asset /snake asset3.png" id="4_i551m"]
+[ext_resource type="Texture2D" uid="uid://dag3kpjmstmo0" path="res://Assets/Characters/Snake asset /snake asset4.png" id="5_vubf7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1je63"]
+atlas = ExtResource("2_pmi76")
+region = Rect2(0, 0, 500, 442)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ai4et"]
+atlas = ExtResource("3_hyjwu")
+region = Rect2(0, 0, 500, 442)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wskqk"]
+atlas = ExtResource("4_i551m")
+region = Rect2(0, 0, 500, 442)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_waqjv"]
+atlas = ExtResource("5_vubf7")
+region = Rect2(0, 0, 500, 442)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uichb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1je63")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ai4et")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wskqk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_waqjv")
+}],
+"loop": true,
+"name": &"running",
+"speed": 20.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f53cx"]
+radius = 21.9996
+height = 79.9985
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n8ci6"]
+radius = 24.0
+height = 88.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6qxrp"]
+radius = 10.0
+height = 52.0
+
+[node name="Snake" type="CharacterBody2D"]
+position = Vector2(-10, -24)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_7np3j")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(11, 23)
+scale = Vector2(0.184, 0.172396)
+sprite_frames = SubResource("SpriteFrames_uichb")
+animation = &"running"
+autoplay = "running"
+frame_progress = 0.949335
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(7, 38)
+rotation = 1.56467
+shape = SubResource("CapsuleShape2D_f53cx")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+visibility_layer = 2
+position = Vector2(7, 36)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_n8ci6")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(22, 1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_6qxrp")
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]

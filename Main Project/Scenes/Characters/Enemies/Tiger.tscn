@@ -1,0 +1,206 @@
+[gd_scene load_steps=42 format=3 uid="uid://bklrug7ygo6d5"]
+
+[ext_resource type="Script" path="res://Scenes/Characters/Enemies/Snake.gd" id="1_at8ar"]
+[ext_resource type="Texture2D" uid="uid://jcn16jj0p50n" path="res://Assets/Characters/Tiger asset/1 Tiger Done.png" id="2_rvs2w"]
+[ext_resource type="Texture2D" uid="uid://dnj6tmrqx3qb1" path="res://Assets/Characters/Tiger asset/2 Tiger Done.png" id="3_ym3ih"]
+[ext_resource type="Texture2D" uid="uid://4jv0ytn1883n" path="res://Assets/Characters/Tiger asset/3 Tiger Done.png" id="4_q3n2k"]
+[ext_resource type="Texture2D" uid="uid://bs8maiuo2x15u" path="res://Assets/Characters/Tiger asset/4 Tiger Done.png" id="5_pum78"]
+[ext_resource type="Texture2D" uid="uid://bf8u5lhqhjer7" path="res://Assets/Characters/Tiger asset/5 Tiger Done.png" id="6_irrn8"]
+[ext_resource type="Texture2D" uid="uid://d0nxuj4ks8mjw" path="res://Assets/Characters/Tiger asset/6 Tiger Done.png" id="7_g3h1f"]
+[ext_resource type="Texture2D" uid="uid://s8p4tdc1vgb5" path="res://Assets/Characters/Tiger asset/7 Tiger Done.png" id="8_a33lj"]
+[ext_resource type="Texture2D" uid="uid://b6b27n75igmia" path="res://Assets/Characters/Tiger asset/8 Tiger Done.png" id="9_jap5x"]
+[ext_resource type="Texture2D" uid="uid://cumlupej7sxhq" path="res://Assets/Characters/Tiger asset/9 Tiger Done.png" id="10_nfj0b"]
+[ext_resource type="Texture2D" uid="uid://bmpcuk2ruf07a" path="res://Assets/Characters/Tiger asset/10 Tiger Done.png" id="11_dl2un"]
+[ext_resource type="Texture2D" uid="uid://b0b2noh266nfn" path="res://Assets/Characters/Tiger asset/11 Tiger Done.png" id="12_ychwy"]
+[ext_resource type="Texture2D" uid="uid://nxk1bay3cso0" path="res://Assets/Characters/Tiger asset/12 Tiger Done.png" id="13_ll0jh"]
+[ext_resource type="Texture2D" uid="uid://d1yhx5hhthro7" path="res://Assets/Characters/Tiger asset/13 Tiger Done.png" id="14_7wf3r"]
+[ext_resource type="Texture2D" uid="uid://dx2y1hdu6es4i" path="res://Assets/Characters/Tiger asset/14 Tiger Done.png" id="15_5ds7s"]
+[ext_resource type="Texture2D" uid="uid://dwshn6xjjcukg" path="res://Assets/Characters/Tiger asset/15 Tiger Done.png" id="16_ykqbu"]
+[ext_resource type="Texture2D" uid="uid://bf23h6ikj3tjd" path="res://Assets/Characters/Tiger asset/16 Tiger Done.png" id="17_inmrd"]
+[ext_resource type="Texture2D" uid="uid://b2ekqaxx24u7u" path="res://Assets/Characters/Tiger asset/17 Tiger Done.png" id="18_dfu1j"]
+[ext_resource type="Texture2D" uid="uid://ccvqvvq51rtq2" path="res://Assets/Characters/Tiger asset/18 Tiger Done .png" id="19_7sgpw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qydfk"]
+atlas = ExtResource("2_rvs2w")
+region = Rect2(0, 0, 504, 266)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y1kvi"]
+atlas = ExtResource("3_ym3ih")
+region = Rect2(0, 0, 498, 266)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m50y3"]
+atlas = ExtResource("4_q3n2k")
+region = Rect2(0, 0, 504, 266)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2jt6"]
+atlas = ExtResource("5_pum78")
+region = Rect2(0, 0, 504, 266)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4u26"]
+atlas = ExtResource("6_irrn8")
+region = Rect2(0, 0, 500, 258)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idj1w"]
+atlas = ExtResource("7_g3h1f")
+region = Rect2(0, 0, 496, 264)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7or6"]
+atlas = ExtResource("8_a33lj")
+region = Rect2(0, 0, 504, 266)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y8fuh"]
+atlas = ExtResource("9_jap5x")
+region = Rect2(0, 0, 504, 266)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i1u00"]
+atlas = ExtResource("10_nfj0b")
+region = Rect2(0, 0, 504, 266)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nnebe"]
+atlas = ExtResource("11_dl2un")
+region = Rect2(0, 0, 504, 266)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2m4m"]
+atlas = ExtResource("12_ychwy")
+region = Rect2(0, 0, 504, 266)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2j1b0"]
+atlas = ExtResource("13_ll0jh")
+region = Rect2(0, 0, 504, 266)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_haip0"]
+atlas = ExtResource("14_7wf3r")
+region = Rect2(0, 0, 504, 266)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3khh1"]
+atlas = ExtResource("15_5ds7s")
+region = Rect2(0, 0, 504, 266)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppam2"]
+atlas = ExtResource("16_ykqbu")
+region = Rect2(0, 0, 504, 266)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_osins"]
+atlas = ExtResource("17_inmrd")
+region = Rect2(0, 0, 504, 266)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1yyg"]
+atlas = ExtResource("18_dfu1j")
+region = Rect2(0, 0, 504, 266)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f4qef"]
+atlas = ExtResource("19_7sgpw")
+region = Rect2(0, 0, 504, 262)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uichb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qydfk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y1kvi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m50y3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c2jt6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4u26")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idj1w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c7or6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y8fuh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i1u00")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nnebe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2m4m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2j1b0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_haip0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3khh1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ppam2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_osins")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o1yyg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f4qef")
+}],
+"loop": true,
+"name": &"running",
+"speed": 45.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f53cx"]
+radius = 31.0056
+height = 170.022
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n8ci6"]
+radius = 31.0
+height = 178.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6qxrp"]
+radius = 15.0
+height = 78.0
+
+[node name="Snake" type="CharacterBody2D"]
+position = Vector2(-10, -24)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_at8ar")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-4, 20)
+scale = Vector2(0.393167, 0.602759)
+sprite_frames = SubResource("SpriteFrames_uichb")
+animation = &"running"
+autoplay = "running"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7, 48)
+rotation = 1.5646
+shape = SubResource("CapsuleShape2D_f53cx")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+visibility_layer = 2
+position = Vector2(-3, 49)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_n8ci6")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(32, 22)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_6qxrp")
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]

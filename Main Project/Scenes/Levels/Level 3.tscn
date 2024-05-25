@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Scenes/Levels/Level 1.gd" id="1_7w7gp"]
 [ext_resource type="Script" path="res://game_manager.gd" id="1_pd1mr"]
-[ext_resource type="Texture2D" uid="uid://5w0rk2ine4xp" path="res://Test Assets/Green.png" id="2_3g18p"]
 [ext_resource type="Texture2D" uid="uid://bbdk48eauom62" path="res://Test Assets/Terrain (16x16).png" id="3_2of4t"]
+[ext_resource type="Texture2D" uid="uid://bdie0djegdqih" path="res://Assets/Backgrounds/Untitled-2 (2).png" id="3_t3qww"]
 [ext_resource type="PackedScene" uid="uid://dng1q2dx20ni4" path="res://Scenes/Characters/Player/main_character.tscn" id="4_wiu8f"]
 [ext_resource type="PackedScene" uid="uid://do7q40y65xn0b" path="res://Scenes/Game Management/finish.tscn" id="5_17m0b"]
 [ext_resource type="PackedScene" uid="uid://bc1eajfeqf8g8" path="res://Scenes/Levels/Level 4 Boss Dungeon.tscn" id="7_sdet6"]
@@ -485,12 +485,15 @@ script = ExtResource("1_pd1mr")
 [node name="Scene Objects" type="Node" parent="."]
 
 [node name="TextureRect" type="TextureRect" parent="Scene Objects"]
-offset_right = 2517.0
-offset_bottom = 651.0
-texture = ExtResource("2_3g18p")
+offset_left = -10.0
+offset_top = -308.0
+offset_right = 2507.0
+offset_bottom = 716.0
+texture = ExtResource("3_t3qww")
 stretch_mode = 1
 
 [node name="TileMap" type="TileMap" parent="Scene Objects"]
+visible = false
 scale = Vector2(3, 3)
 tile_set = SubResource("TileSet_e424c")
 format = 2
@@ -500,7 +503,7 @@ layer_0/tile_data = PackedInt32Array(851968, 458752, 0, 851969, 458752, 0, 85197
 position = Vector2(208, 540)
 
 [node name="Camera2D" type="Camera2D" parent="Scene Objects/Player"]
-position = Vector2(1, -2)
+position = Vector2(375, -204)
 process_callback = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 7.0
