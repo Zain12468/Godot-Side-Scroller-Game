@@ -2,38 +2,28 @@ extends CharacterBody2D
 
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-var startPosition
-var endPosition
 
 
 @onready var sprite_2d = $AnimatedSprite2D
-@export var speed = 150
-@export var limit = 0.5
+@export var speed = 350
 @export var health = 3
 
-func _ready():
-	startPosition = position
-	endPosition = startPosition + Vector2(500, 0)
+@onready var target = $"../Scene Objects/Player"
 
-func changeDirection():
-	var tempEnd = endPosition
-	endPosition = startPosition
-	startPosition = tempEnd
-
-func updateVelocity():
-	var moveDirection = (endPosition - position)
-	if moveDirection.length() < limit:
-		changeDirection()
-	velocity = moveDirection.normalized() * speed
 
 
 func _physics_process(delta):
 	#Animations
 	sprite_2d.animation = 'running'
+	
+	if target == null: get_tree().get_nodes_in_group("Player")[0]
+	else:
+		velocity = position.direction_to(target.position) * speed
+		velocity.y = 0
+	
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		
-	updateVelocity()
 	move_and_slide()
 	handleCollision()
 	var isLeft = velocity.x < 0
