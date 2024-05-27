@@ -1,14 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://bc1eajfeqf8g8"]
+[gd_scene load_steps=10 format=3 uid="uid://bc1eajfeqf8g8"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/Level 1.gd" id="1_cmxrn"]
 [ext_resource type="Script" path="res://game_manager.gd" id="2_y1bam"]
 [ext_resource type="Texture2D" uid="uid://c0c5rgl0xbgm5" path="res://Assets/Backgrounds/Untitled-2 (3).png" id="3_ehe10"]
 [ext_resource type="Texture2D" uid="uid://bbdk48eauom62" path="res://Test Assets/Terrain (16x16).png" id="4_6lwsj"]
 [ext_resource type="PackedScene" uid="uid://dng1q2dx20ni4" path="res://Scenes/Characters/Player/main_character.tscn" id="5_4a88i"]
-[ext_resource type="PackedScene" uid="uid://do7q40y65xn0b" path="res://Scenes/Game Management/finish.tscn" id="6_5r32k"]
-[ext_resource type="PackedScene" uid="uid://deuqbeubboi2i" path="res://Scenes/Collectables/collectable.tscn" id="7_j5elx"]
 [ext_resource type="PackedScene" uid="uid://p2lrseq3ebh6" path="res://Scenes/Game Management/hearts_container.tscn" id="8_f0pj0"]
-[ext_resource type="PackedScene" uid="uid://b1yrx7xot4yi1" path="res://Scenes/Characters/Enemies/boss.tscn" id="9_tqd8d"]
+[ext_resource type="PackedScene" uid="uid://b3x3fd5gj2xlc" path="res://Scenes/Characters/Enemies/Gorilla.tscn" id="9_8yo4q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xkrva"]
 texture = ExtResource("4_6lwsj")
@@ -465,16 +463,6 @@ texture = ExtResource("4_6lwsj")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_xkrva")
 
-[sub_resource type="GDScript" id="GDScript_st6de"]
-script/source = "extends Area2D
-
-@export var target_level : PackedScene
-
-func _on_body_entered(body):
-	if (body.name == 'Player'):
-		get_tree().change_scene_to_packed(target_level)
-"
-
 [node name="Level 4" type="Node"]
 script = ExtResource("1_cmxrn")
 
@@ -503,16 +491,12 @@ layer_0/tile_data = PackedInt32Array(851968, 458752, 0, 851969, 458752, 0, 85197
 position = Vector2(208, 540)
 
 [node name="Camera2D" type="Camera2D" parent="Scene Objects/Player"]
-position = Vector2(375, -236)
+position = Vector2(165, -116)
 process_callback = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 7.0
 
 [node name="Collectables" type="Node" parent="Scene Objects"]
-
-[node name="Finish" parent="Scene Objects" instance=ExtResource("6_5r32k")]
-position = Vector2(1952, 589)
-script = SubResource("GDScript_st6de")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -535,15 +519,6 @@ text = "Points: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Collectable" parent="." instance=ExtResource("7_j5elx")]
-position = Vector2(750, 514)
-
-[node name="Collectable2" parent="." instance=ExtResource("7_j5elx")]
-position = Vector2(910, 521)
-
-[node name="Collectable3" parent="." instance=ExtResource("7_j5elx")]
-position = Vector2(1140, 507)
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HeartsContainer" parent="CanvasLayer" instance=ExtResource("8_f0pj0")]
@@ -553,7 +528,5 @@ offset_right = 5.0
 offset_bottom = 10.0
 scale = Vector2(3, 3)
 
-[node name="Boss" parent="." groups=["Boss"] instance=ExtResource("9_tqd8d")]
-position = Vector2(468, 563)
-
-[connection signal="body_entered" from="Scene Objects/Finish" to="Scene Objects/Finish" method="_on_body_entered"]
+[node name="Gorilla" parent="." groups=["Enemy"] instance=ExtResource("9_8yo4q")]
+position = Vector2(1096, 529)

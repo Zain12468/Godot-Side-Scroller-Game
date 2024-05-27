@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://w8mxo5wcc28y"
-path="res://.godot/imported/Gorilla asset4 .png-b1c77679c3bd22657f478185344f804c.ctex"
+path="res://.godot/imported/Gorilla asset4.png-5c1bd6dd509f746416c35329c60b0a2d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Characters/Gorilla asset /Gorilla asset4 .png"
-dest_files=["res://.godot/imported/Gorilla asset4 .png-b1c77679c3bd22657f478185344f804c.ctex"]
+source_file="res://Assets/Characters/Gorilla asset/Gorilla asset4.png"
+dest_files=["res://.godot/imported/Gorilla asset4.png-5c1bd6dd509f746416c35329c60b0a2d.ctex"]
 
 [params]
 

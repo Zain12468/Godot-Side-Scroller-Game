@@ -6,7 +6,7 @@ var startPosition
 var endPosition
 
 @onready var sprite_2d = $AnimatedSprite2D
-@export var speed = 150
+@export var speed = 300
 @export var limit = 0.5
 
 
