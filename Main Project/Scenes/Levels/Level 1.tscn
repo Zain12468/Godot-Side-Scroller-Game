@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://durws67hubpnv"]
+[gd_scene load_steps=14 format=3 uid="uid://durws67hubpnv"]
 
 [ext_resource type="Script" path="res://game_manager.gd" id="1_e5p0h"]
 [ext_resource type="Script" path="res://Scenes/Levels/Level 1.gd" id="1_ssrrh"]
@@ -9,8 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://xqv4fa5ckbwe" path="res://Scenes/Levels/Level 2.tscn" id="7_fqohm"]
 [ext_resource type="PackedScene" uid="uid://deuqbeubboi2i" path="res://Scenes/Collectables/collectable.tscn" id="7_t7nnl"]
 [ext_resource type="PackedScene" uid="uid://p2lrseq3ebh6" path="res://Scenes/Game Management/hearts_container.tscn" id="8_be0ij"]
-[ext_resource type="PackedScene" uid="uid://cg1j7xeewaf1y" path="res://Scenes/Characters/Enemies/Snake.tscn" id="10_6q0d8"]
-[ext_resource type="PackedScene" uid="uid://b3x3fd5gj2xlc" path="res://Scenes/Characters/Enemies/Gorilla.tscn" id="11_w7u4v"]
 [ext_resource type="PackedScene" uid="uid://bklrug7ygo6d5" path="res://Scenes/Characters/Enemies/Tiger.tscn" id="12_sshyb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xkrva"]
@@ -541,13 +539,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Collectable" parent="." instance=ExtResource("7_t7nnl")]
-position = Vector2(714, 492)
+position = Vector2(727, 410)
 
 [node name="Collectable2" parent="." instance=ExtResource("7_t7nnl")]
-position = Vector2(910, 521)
+position = Vector2(932, 299)
 
 [node name="Collectable3" parent="." instance=ExtResource("7_t7nnl")]
-position = Vector2(1140, 507)
+position = Vector2(1078, 389)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -558,13 +556,7 @@ offset_right = 5.0
 offset_bottom = 10.0
 scale = Vector2(3, 3)
 
-[node name="Snake" parent="." instance=ExtResource("10_6q0d8")]
-position = Vector2(1833, 562)
-
-[node name="Gorilla" parent="." instance=ExtResource("11_w7u4v")]
-position = Vector2(1482, 523)
-
 [node name="Tiger" parent="." instance=ExtResource("12_sshyb")]
-position = Vector2(527, 543)
+position = Vector2(523, 514)
 
 [connection signal="body_entered" from="Scene Objects/Finish" to="Scene Objects/Finish" method="_on_body_entered"]

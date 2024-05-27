@@ -8,6 +8,7 @@ var endPosition
 @onready var sprite_2d = $AnimatedSprite2D
 @export var speed = 150
 @export var limit = 0.5
+@export var endPoint : Marker2D
 
 
 func _ready():

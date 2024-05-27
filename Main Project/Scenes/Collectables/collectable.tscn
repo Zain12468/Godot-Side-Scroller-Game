@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://deuqbeubboi2i"]
+[gd_scene load_steps=4 format=3 uid="uid://deuqbeubboi2i"]
+
+[ext_resource type="Texture2D" uid="uid://cowojl2y1qvum" path="res://Assets/Other/glowing pixlated crystal.png" id="1_apsbc"]
 
 [sub_resource type="GDScript" id="GDScript_maadm"]
 script/source = "extends Area2D
@@ -13,17 +15,18 @@ func _on_body_entered(body):
 "
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hqe23"]
-radius = 29.0
+radius = 35.0
 
 [node name="Collectable" type="Area2D"]
 script = SubResource("GDScript_maadm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(142, 71)
+position = Vector2(143, 77)
 shape = SubResource("CircleShape2D_hqe23")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(142, 70)
-scale = Vector2(0.182701, 0.140935)
+position = Vector2(142, 75.7588)
+scale = Vector2(0.182701, 0.170468)
+texture = ExtResource("1_apsbc")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
