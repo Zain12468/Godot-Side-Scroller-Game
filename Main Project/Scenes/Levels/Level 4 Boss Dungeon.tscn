@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bc1eajfeqf8g8"]
+[gd_scene load_steps=13 format=3 uid="uid://bc1eajfeqf8g8"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/Level 1.gd" id="1_cmxrn"]
 [ext_resource type="Script" path="res://game_manager.gd" id="2_y1bam"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://do7q40y65xn0b" path="res://Scenes/Game Management/finish.tscn" id="6_5r32k"]
 [ext_resource type="PackedScene" uid="uid://deuqbeubboi2i" path="res://Scenes/Collectables/collectable.tscn" id="7_j5elx"]
 [ext_resource type="PackedScene" uid="uid://p2lrseq3ebh6" path="res://Scenes/Game Management/hearts_container.tscn" id="8_f0pj0"]
+[ext_resource type="PackedScene" uid="uid://b1yrx7xot4yi1" path="res://Scenes/Characters/Enemies/boss.tscn" id="9_tqd8d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xkrva"]
 texture = ExtResource("4_6lwsj")
@@ -548,5 +549,8 @@ offset_top = 10.0
 offset_right = 5.0
 offset_bottom = 10.0
 scale = Vector2(3, 3)
+
+[node name="Boss" parent="." instance=ExtResource("9_tqd8d")]
+position = Vector2(468, 563)
 
 [connection signal="body_entered" from="Scene Objects/Finish" to="Scene Objects/Finish" method="_on_body_entered"]
