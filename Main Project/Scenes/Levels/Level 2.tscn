@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://xqv4fa5ckbwe"]
+[gd_scene load_steps=17 format=3 uid="uid://xqv4fa5ckbwe"]
 
 [ext_resource type="Script" path="res://game_manager.gd" id="1_xf21y"]
 [ext_resource type="Script" path="res://Scenes/Levels/Level 1.gd" id="1_yhob1"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dgqnx3uw8mk74" path="res://Scenes/Level Design/big_platform.tscn" id="10_ckq1f"]
 [ext_resource type="PackedScene" uid="uid://bklrug7ygo6d5" path="res://Scenes/Characters/Enemies/Tiger.tscn" id="11_t48mg"]
 [ext_resource type="PackedScene" uid="uid://cfuapowpoicwx" path="res://Scenes/Level Design/small_platfor.tscn" id="12_t7jxv"]
+[ext_resource type="PackedScene" uid="uid://cg1j7xeewaf1y" path="res://Scenes/Characters/Enemies/Snake.tscn" id="13_6jnic"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xkrva"]
 texture = ExtResource("3_i7p21")
@@ -572,12 +573,15 @@ position = Vector2(790, 689)
 position = Vector2(1201, 362)
 
 [node name="Tiger3" parent="." instance=ExtResource("11_t48mg")]
-position = Vector2(1386, 695)
+position = Vector2(1258, 691)
 
 [node name="Small Platform3" parent="." instance=ExtResource("12_t7jxv")]
 position = Vector2(1423, 497)
 
 [node name="Collectable4" parent="." instance=ExtResource("6_n84kl")]
 position = Vector2(1057, 202)
+
+[node name="Snake" parent="." instance=ExtResource("13_6jnic")]
+position = Vector2(1634, 701)
 
 [connection signal="body_entered" from="Scene Objects/Finish" to="Scene Objects/Finish" method="_on_body_entered"]
