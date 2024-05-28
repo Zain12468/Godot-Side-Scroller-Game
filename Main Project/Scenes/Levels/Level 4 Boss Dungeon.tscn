@@ -546,4 +546,4 @@ offset_bottom = 10.0
 scale = Vector2(3, 3)
 
 [node name="Gorilla" parent="." groups=["Enemy"] instance=ExtResource("9_8yo4q")]
-position = Vector2(1096, 529)
+position = Vector2(1750, 524)

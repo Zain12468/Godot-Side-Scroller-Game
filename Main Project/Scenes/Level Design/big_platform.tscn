@@ -13,4 +13,4 @@ texture = ExtResource("1_4gajh")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(12, -6)
 scale = Vector2(0.118256, 0.055838)
-polygon = PackedVector2Array(-3535, -1908, 3230, -1854, 3230, -1865, 50, 3687)
+polygon = PackedVector2Array(-3061.16, -1844.62, 3230, -1854, 3230, -1865, 50, 3687)
