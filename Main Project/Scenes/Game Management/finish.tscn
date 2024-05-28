@@ -1,17 +1,18 @@
 [gd_scene load_steps=4 format=3 uid="uid://do7q40y65xn0b"]
 
 [ext_resource type="Script" path="res://Scenes/Game Management/finish.gd" id="1_b5vmw"]
-[ext_resource type="Texture2D" uid="uid://dq7sbmyno0rpq" path="res://Test Assets/End (Idle).png" id="1_ld8om"]
+[ext_resource type="Texture2D" uid="uid://j5mq1f4pea1k" path="res://Assets/Other/Untitled-1+_7_.ai-5-1-removebg-preview.png" id="2_5l2pc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i8kto"]
-size = Vector2(47, 46)
+size = Vector2(327, 369)
 
 [node name="Finish" type="Area2D"]
 script = ExtResource("1_b5vmw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_ld8om")
+position = Vector2(-4, 0)
+texture = ExtResource("2_5l2pc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 9)
+position = Vector2(-5.5, 3)
 shape = SubResource("RectangleShape2D_i8kto")

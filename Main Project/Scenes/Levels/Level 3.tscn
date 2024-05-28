@@ -511,7 +511,7 @@ position_smoothing_speed = 7.0
 [node name="Collectables" type="Node" parent="Scene Objects"]
 
 [node name="Finish" parent="Scene Objects" instance=ExtResource("5_17m0b")]
-position = Vector2(1952, 589)
+position = Vector2(2343, 426)
 script = SubResource("GDScript_st6de")
 target_level = ExtResource("7_sdet6")
 
