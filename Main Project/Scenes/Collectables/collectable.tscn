@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://deuqbeubboi2i"]
+[gd_scene load_steps=5 format=3 uid="uid://deuqbeubboi2i"]
 
 [ext_resource type="Texture2D" uid="uid://cowojl2y1qvum" path="res://Assets/Other/glowing pixlated crystal.png" id="1_apsbc"]
+[ext_resource type="AudioStream" uid="uid://g2qo5c4jalj" path="res://Assets/Sound Effects/mixkit-winning-a-coin-video-game-2069.wav" id="2_7jtrh"]
 
 [sub_resource type="GDScript" id="GDScript_maadm"]
 script/source = "extends Area2D
@@ -10,6 +11,9 @@ script/source = "extends Area2D
 
 func _on_body_entered(body):
 	if (body.name == 'Player'):
+		$Sprite2D.self_modulate = Color(0, 0, 0, 0)
+		$PickedUp.play()
+		await get_tree().create_timer(0.5).timeout
 		queue_free()
 		game_manager.add_point()
 "
@@ -28,5 +32,8 @@ shape = SubResource("CircleShape2D_hqe23")
 position = Vector2(142, 75.7588)
 scale = Vector2(0.182701, 0.170468)
 texture = ExtResource("1_apsbc")
+
+[node name="PickedUp" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_7jtrh")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -6,6 +6,7 @@ extends CharacterBody2D
 
 signal healthChanged
 
+
 const SPEED = 500.0
 const JUMP_VELOCITY = -850.0
 @onready var sprite_2d = $Sprite2D
@@ -34,6 +35,7 @@ func _physics_process(delta):
 	# Handle jump.
 	if (Input.is_action_just_pressed("ui_up") or Input.is_action_just_pressed("ui_accept")) and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		$Jump.play()
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -46,13 +48,15 @@ func _physics_process(delta):
 	move_and_slide()
 	var isLeft = velocity.x < 0
 	sprite_2d.flip_h = isLeft
+	
+		
 
 func _on_hurtbox_area_entered(area):
 	if area.name == "Hitbox":
 		currentHealth -= 1
 		if currentHealth < 1:
 			get_tree().change_scene_to_file("res://Scenes/Levels/Level 1.tscn")
-			
+			MainMenu.died = true
 		healthChanged.emit(currentHealth)
 		knockback(area.get_parent().velocity)
 
@@ -60,4 +64,5 @@ func knockback(enemyVelocity: Vector2):
 	var knockbackDirection = (enemyVelocity - velocity).normalized() * knockbackPower
 	velocity = knockbackDirection
 	move_and_slide()
+
 

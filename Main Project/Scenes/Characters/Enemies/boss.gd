@@ -38,6 +38,7 @@ func handleCollision():
 
 func _on_hurtbox_area_entered(area):
 	if area == $"Hitbox": return
+	$Hit.play()
 	health -= 1
 	if health == 0:
 		sprite_2d.self_modulate = Color("red")

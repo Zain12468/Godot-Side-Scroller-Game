@@ -1,10 +1,12 @@
-[gd_scene load_steps=16 format=3 uid="uid://dng1q2dx20ni4"]
+[gd_scene load_steps=18 format=3 uid="uid://dng1q2dx20ni4"]
 
 [ext_resource type="Script" path="res://Scenes/Characters/Player/main_character.gd" id="1_nk5ns"]
 [ext_resource type="Texture2D" uid="uid://dc85rwg3nm6mn" path="res://Assets/Characters/Main Character- Jungle man/pose 1.png" id="2_1lfer"]
 [ext_resource type="Texture2D" uid="uid://c8i8ek06eq4lk" path="res://Assets/Characters/Main Character- Jungle man/pse 4.png" id="3_jflx4"]
 [ext_resource type="Texture2D" uid="uid://dmt1rl4mifnj7" path="res://Assets/Characters/Main Character- Jungle man/pose 2.png" id="4_inwb4"]
 [ext_resource type="Texture2D" uid="uid://f0nd2b80cf1o" path="res://Assets/Characters/Main Character- Jungle man/pose 3.png" id="5_e6x1h"]
+[ext_resource type="AudioStream" uid="uid://ddagylso4ctf1" path="res://Assets/Sound Effects/cartoon-jump-6462.mp3" id="6_0uu2f"]
+[ext_resource type="AudioStream" uid="uid://camtfvpt4xxc1" path="res://Assets/Sound Effects/mixkit-player-losing-or-failing-2042.wav" id="7_8kl6n"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p7w5j"]
 radius = 22.1538
@@ -111,5 +113,12 @@ collision_mask = 0
 position = Vector2(8, 52)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_rtqcv")
+
+[node name="Jump" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_0uu2f")
+pitch_scale = 1.32
+
+[node name="Death" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_8kl6n")
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]

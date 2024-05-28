@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://durws67hubpnv"]
+[gd_scene load_steps=15 format=3 uid="uid://durws67hubpnv"]
 
 [ext_resource type="Script" path="res://game_manager.gd" id="1_e5p0h"]
 [ext_resource type="Script" path="res://Scenes/Levels/Level 1.gd" id="1_ssrrh"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://xqv4fa5ckbwe" path="res://Scenes/Levels/Level 2.tscn" id="7_fqohm"]
 [ext_resource type="PackedScene" uid="uid://deuqbeubboi2i" path="res://Scenes/Collectables/collectable.tscn" id="7_t7nnl"]
 [ext_resource type="PackedScene" uid="uid://p2lrseq3ebh6" path="res://Scenes/Game Management/hearts_container.tscn" id="8_be0ij"]
+[ext_resource type="AudioStream" uid="uid://camtfvpt4xxc1" path="res://Assets/Sound Effects/mixkit-player-losing-or-failing-2042.wav" id="11_himiq"]
 [ext_resource type="PackedScene" uid="uid://bklrug7ygo6d5" path="res://Scenes/Characters/Enemies/Tiger.tscn" id="12_sshyb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xkrva"]
@@ -558,5 +559,8 @@ scale = Vector2(3, 3)
 
 [node name="Tiger" parent="." instance=ExtResource("12_sshyb")]
 position = Vector2(523, 514)
+
+[node name="Death" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_himiq")
 
 [connection signal="body_entered" from="Scene Objects/Finish" to="Scene Objects/Finish" method="_on_body_entered"]

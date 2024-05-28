@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://bklrug7ygo6d5"]
+[gd_scene load_steps=43 format=3 uid="uid://bklrug7ygo6d5"]
 
 [ext_resource type="Script" path="res://Scenes/Characters/Enemies/Tiger.gd" id="1_5r0j1"]
 [ext_resource type="Texture2D" uid="uid://jcn16jj0p50n" path="res://Assets/Characters/Tiger asset/1 Tiger Done.png" id="2_rvs2w"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://bf23h6ikj3tjd" path="res://Assets/Characters/Tiger asset/16 Tiger Done.png" id="17_inmrd"]
 [ext_resource type="Texture2D" uid="uid://b2ekqaxx24u7u" path="res://Assets/Characters/Tiger asset/17 Tiger Done.png" id="18_dfu1j"]
 [ext_resource type="Texture2D" uid="uid://ccvqvvq51rtq2" path="res://Assets/Characters/Tiger asset/18 Tiger Done .png" id="19_7sgpw"]
+[ext_resource type="AudioStream" uid="uid://csla3byfd2w1p" path="res://Assets/Sound Effects/mixkit-small-hit-in-a-game-2072.wav" id="20_evdva"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qydfk"]
 atlas = ExtResource("2_rvs2w")
@@ -202,6 +203,9 @@ collision_mask = 4
 position = Vector2(26, 10)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_6qxrp")
+
+[node name="Hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_evdva")
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]

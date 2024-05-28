@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://cg1j7xeewaf1y"]
+[gd_scene load_steps=15 format=3 uid="uid://cg1j7xeewaf1y"]
 
 [ext_resource type="Script" path="res://Scenes/Characters/Enemies/Snake.gd" id="1_7np3j"]
 [ext_resource type="Texture2D" uid="uid://cxejt8l2dmvus" path="res://Assets/Characters/Snake asset/snake asset1.png" id="2_pmi76"]
 [ext_resource type="Texture2D" uid="uid://dq0ny4n1puxkq" path="res://Assets/Characters/Snake asset/snake asset2.png" id="3_hyjwu"]
 [ext_resource type="Texture2D" uid="uid://c1pnk5pl7082n" path="res://Assets/Characters/Snake asset/snake asset3.png" id="4_i551m"]
 [ext_resource type="Texture2D" uid="uid://dag3kpjmstmo0" path="res://Assets/Characters/Snake asset/snake asset4.png" id="5_vubf7"]
+[ext_resource type="AudioStream" uid="uid://csla3byfd2w1p" path="res://Assets/Sound Effects/mixkit-small-hit-in-a-game-2072.wav" id="6_swdvy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1je63"]
 atlas = ExtResource("2_pmi76")
@@ -89,6 +90,9 @@ collision_mask = 4
 position = Vector2(22, 1)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_6qxrp")
+
+[node name="Hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_swdvy")
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
