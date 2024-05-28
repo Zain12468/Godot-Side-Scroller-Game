@@ -10,7 +10,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var target = $"../Scene Objects/Player"
 
-
+@onready var winDisplay = $"../UI/Panel/Label"
 
 func _physics_process(delta):
 	#Animations
@@ -42,10 +42,13 @@ func _on_hurtbox_area_entered(area):
 	if health == 0:
 		sprite_2d.self_modulate = Color("red")
 		await get_tree().create_timer(0.25).timeout
+		winDisplay.self_modulate = Color(1, 1, 1, 1)		
 		queue_free()
 	else:
 		sprite_2d.self_modulate = Color("red")
 		await get_tree().create_timer(0.25).timeout
 		sprite_2d.self_modulate = Color(1, 1, 1, 1)
+		
+		
 	
 
