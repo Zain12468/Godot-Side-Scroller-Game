@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ckl7e8uro6sha"]
+[gd_scene load_steps=17 format=3 uid="uid://ckl7e8uro6sha"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/Level 1.gd" id="1_7w7gp"]
 [ext_resource type="Script" path="res://game_manager.gd" id="1_pd1mr"]
@@ -8,7 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://do7q40y65xn0b" path="res://Scenes/Game Management/finish.tscn" id="5_17m0b"]
 [ext_resource type="PackedScene" uid="uid://bc1eajfeqf8g8" path="res://Scenes/Levels/Level 4 Boss Dungeon.tscn" id="7_sdet6"]
 [ext_resource type="PackedScene" uid="uid://p2lrseq3ebh6" path="res://Scenes/Game Management/hearts_container.tscn" id="8_ki0md"]
+[ext_resource type="PackedScene" uid="uid://dgqnx3uw8mk74" path="res://Scenes/Level Design/big_platform.tscn" id="10_lyris"]
+[ext_resource type="PackedScene" uid="uid://bklrug7ygo6d5" path="res://Scenes/Characters/Enemies/Tiger.tscn" id="11_n4wka"]
 [ext_resource type="PackedScene" uid="uid://deuqbeubboi2i" path="res://Scenes/Collectables/collectable.tscn" id="12_2a5es"]
+[ext_resource type="PackedScene" uid="uid://cg1j7xeewaf1y" path="res://Scenes/Characters/Enemies/Snake.tscn" id="12_4vx4w"]
+[ext_resource type="PackedScene" uid="uid://cfuapowpoicwx" path="res://Scenes/Level Design/small_platfor.tscn" id="13_hillp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xkrva"]
 texture = ExtResource("3_2of4t")
@@ -500,10 +504,10 @@ format = 2
 layer_0/tile_data = PackedInt32Array(851968, 458752, 0, 851969, 458752, 0, 851970, 458752, 0, 851971, 458752, 0, 851972, 458752, 0, 851973, 458752, 0, 851974, 458752, 0, 851975, 458752, 0, 851976, 458752, 0, 851977, 458752, 0, 851978, 458752, 0, 851979, 458752, 0, 851980, 458752, 0, 851981, 458752, 0, 851982, 458752, 0, 851983, 458752, 0, 851984, 458752, 0, 851985, 458752, 0, 851986, 458752, 0, 851987, 458752, 0, 851988, 458752, 0, 851989, 458752, 0, 851990, 458752, 0, 851991, 458752, 0, 851992, 458752, 0, 917503, 458752, 0, -1, 458752, 1, 65535, 458752, 1, 131071, 458752, 1, 196607, 458752, 1, 262143, 458752, 1, 327679, 458752, 1, 393215, 458752, 1, 458751, 458752, 1, 524287, 458752, 1, 589823, 458752, 1, 655359, 458752, 1, 720895, 458752, 1, 786431, 458752, 1, 851967, 458752, 1, -65536, 458752, 1, -65535, 458752, 1, -65534, 458752, 1, -65533, 458752, 1, -65532, 458752, 1, -65531, 458752, 1, -65530, 458752, 1, -65529, 458752, 1, -65528, 458752, 1, -65527, 458752, 1, -65526, 458752, 1, -65525, 458752, 1, -65524, 458752, 1, -65523, 458752, 1, -65522, 458752, 1, -65521, 458752, 1, -65520, 458752, 1, -65519, 458752, 1, -65518, 458752, 1, -65517, 458752, 1, -65516, 458752, 1, -65515, 458752, 1, -65514, 458752, 1, -65513, 458752, 1, 851993, 458752, 0, 851994, 458752, 0, 851995, 458752, 0, 851996, 458752, 0, 851997, 458752, 0, 851998, 458752, 0, 851999, 458752, 0, 852000, 458752, 0, 852001, 458752, 0, 852002, 458752, 0, 852003, 458752, 0, 852004, 458752, 0, 852005, 458752, 0, 852006, 458752, 0, 852007, 458752, 0, 852008, 458752, 0, -65512, 458752, 1, -65511, 458752, 1, -65510, 458752, 1, -65509, 458752, 1, -65508, 458752, 1, -65507, 458752, 1, -65506, 458752, 1, -65505, 458752, 1, -65504, 458752, 1, -65503, 458752, 1, -65502, 458752, 1, -65501, 458752, 1, -65500, 458752, 1, -65499, 458752, 1, -65498, 458752, 1, -65497, 458752, 1, -65496, 458752, 1, 852009, 458752, 0, 852010, 458752, 0, 852011, 458752, 0, 852012, 458752, 0, 852013, 458752, 0, 852014, 458752, 0, 852015, 458752, 0, 852016, 458752, 0, 852017, 458752, 0, 852018, 458752, 0, 852019, 458752, 0, -65495, 458752, 1, -65494, 458752, 1, -65493, 458752, 1, -65492, 458752, 1, -65491, 458752, 1, -65490, 458752, 1, -65489, 458752, 1, -65488, 458752, 1, -65487, 458752, 1, -65486, 458752, 1, -65485, 458752, 1, -65484, 458752, 1, 52, 458752, 1, 65588, 458752, 1, 131124, 458752, 1, 196660, 458752, 1, 262196, 458752, 1, 327732, 458752, 1, 393268, 458752, 1, 458804, 458752, 1, 524340, 458752, 1, 589876, 458752, 1, 655412, 458752, 1, 720948, 458752, 1, 786484, 458752, 1, 852020, 458752, 1)
 
 [node name="Player" parent="Scene Objects" instance=ExtResource("4_wiu8f")]
-position = Vector2(208, 540)
+position = Vector2(444, 386)
 
 [node name="Camera2D" type="Camera2D" parent="Scene Objects/Player"]
-position = Vector2(375, -204)
+position = Vector2(280, -140)
 process_callback = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 7.0
@@ -511,7 +515,7 @@ position_smoothing_speed = 7.0
 [node name="Collectables" type="Node" parent="Scene Objects"]
 
 [node name="Finish" parent="Scene Objects" instance=ExtResource("5_17m0b")]
-position = Vector2(2343, 426)
+position = Vector2(2349, -110)
 script = SubResource("GDScript_st6de")
 target_level = ExtResource("7_sdet6")
 
@@ -537,13 +541,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Collectable" parent="." instance=ExtResource("12_2a5es")]
-position = Vector2(750, 514)
+position = Vector2(-6, 336)
 
 [node name="Collectable2" parent="." instance=ExtResource("12_2a5es")]
-position = Vector2(910, 521)
+position = Vector2(886, 477)
 
 [node name="Collectable3" parent="." instance=ExtResource("12_2a5es")]
-position = Vector2(1140, 507)
+position = Vector2(2094, 475)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -553,5 +557,41 @@ offset_top = 10.0
 offset_right = 5.0
 offset_bottom = 10.0
 scale = Vector2(3, 3)
+
+[node name="Big Platform" parent="." instance=ExtResource("10_lyris")]
+position = Vector2(413, 569)
+
+[node name="Tiger" parent="." instance=ExtResource("11_n4wka")]
+position = Vector2(171, 373)
+
+[node name="Snake" parent="." instance=ExtResource("12_4vx4w")]
+position = Vector2(862, 557)
+
+[node name="Tiger2" parent="." instance=ExtResource("11_n4wka")]
+position = Vector2(1397, 514)
+
+[node name="Small Platform" parent="." instance=ExtResource("13_hillp")]
+position = Vector2(950, 390)
+
+[node name="Small Platform2" parent="." instance=ExtResource("13_hillp")]
+position = Vector2(1215, 314)
+
+[node name="Small Platform3" parent="." instance=ExtResource("13_hillp")]
+position = Vector2(1003, 147)
+
+[node name="Big Platform2" parent="." instance=ExtResource("10_lyris")]
+position = Vector2(2155, 193)
+
+[node name="Tiger3" parent="." instance=ExtResource("11_n4wka")]
+position = Vector2(1813, 519)
+
+[node name="Small Platform4" parent="." instance=ExtResource("13_hillp")]
+position = Vector2(1416, 230)
+
+[node name="Small Platform5" parent="." instance=ExtResource("13_hillp")]
+position = Vector2(1611, 133)
+
+[node name="Snake2" parent="." instance=ExtResource("12_4vx4w")]
+position = Vector2(1823, 15)
 
 [connection signal="body_entered" from="Scene Objects/Finish" to="Scene Objects/Finish" method="_on_body_entered"]

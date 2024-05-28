@@ -2,7 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://bjydfjtdv6x01" path="res://Assets/Other/Untitled-1+_7_.ai-4-1-removebg-preview.png" id="1_4gajh"]
 
-[node name="Big Platform" type="Area2D"]
+[node name="Big Platform" type="StaticBody2D"]
+collision_layer = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(140, 93)
