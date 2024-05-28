@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://durws67hubpnv"]
+[gd_scene load_steps=18 format=3 uid="uid://durws67hubpnv"]
 
 [ext_resource type="Script" path="res://game_manager.gd" id="1_e5p0h"]
 [ext_resource type="Script" path="res://Scenes/Levels/Level 1.gd" id="1_ssrrh"]
@@ -10,7 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://deuqbeubboi2i" path="res://Scenes/Collectables/collectable.tscn" id="7_t7nnl"]
 [ext_resource type="PackedScene" uid="uid://p2lrseq3ebh6" path="res://Scenes/Game Management/hearts_container.tscn" id="8_be0ij"]
 [ext_resource type="AudioStream" uid="uid://camtfvpt4xxc1" path="res://Assets/Sound Effects/mixkit-player-losing-or-failing-2042.wav" id="11_himiq"]
+[ext_resource type="PackedScene" uid="uid://dgqnx3uw8mk74" path="res://Scenes/Level Design/big_platform.tscn" id="12_k4mm4"]
 [ext_resource type="PackedScene" uid="uid://bklrug7ygo6d5" path="res://Scenes/Characters/Enemies/Tiger.tscn" id="12_sshyb"]
+[ext_resource type="PackedScene" uid="uid://cfuapowpoicwx" path="res://Scenes/Level Design/small_platform.tscn" id="13_lgn8h"]
+[ext_resource type="PackedScene" uid="uid://cg1j7xeewaf1y" path="res://Scenes/Characters/Enemies/Snake.tscn" id="14_lpc22"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xkrva"]
 texture = ExtResource("3_ssrl0")
@@ -514,7 +517,7 @@ position_smoothing_speed = 7.0
 [node name="Collectables" type="Node" parent="Scene Objects"]
 
 [node name="Finish" parent="Scene Objects" instance=ExtResource("5_2m082")]
-position = Vector2(2275, 416)
+position = Vector2(2342, 411)
 script = SubResource("GDScript_st6de")
 target_level = ExtResource("7_fqohm")
 
@@ -540,13 +543,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Collectable" parent="." instance=ExtResource("7_t7nnl")]
-position = Vector2(727, 410)
+position = Vector2(1395, 472)
 
 [node name="Collectable2" parent="." instance=ExtResource("7_t7nnl")]
-position = Vector2(932, 299)
+position = Vector2(1177, 155)
 
 [node name="Collectable3" parent="." instance=ExtResource("7_t7nnl")]
-position = Vector2(1078, 389)
+position = Vector2(735, 391)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -562,5 +565,17 @@ position = Vector2(523, 514)
 
 [node name="Death" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_himiq")
+
+[node name="Big Platform" parent="." instance=ExtResource("12_k4mm4")]
+position = Vector2(1326, 396)
+
+[node name="Small Platform2" parent="." instance=ExtResource("13_lgn8h")]
+position = Vector2(872, 549)
+
+[node name="Snake" parent="." instance=ExtResource("14_lpc22")]
+position = Vector2(1092, 214)
+
+[node name="Tiger2" parent="." instance=ExtResource("12_sshyb")]
+position = Vector2(1577, 521)
 
 [connection signal="body_entered" from="Scene Objects/Finish" to="Scene Objects/Finish" method="_on_body_entered"]

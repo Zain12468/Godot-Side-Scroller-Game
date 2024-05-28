@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfuapowpoicwx"]
+
+[ext_resource type="Texture2D" uid="uid://bjydfjtdv6x01" path="res://Assets/Other/Untitled-1+_7_.ai-4-1-removebg-preview.png" id="1_gs44c"]
+
+[node name="Small Platform" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(27, 24)
+scale = Vector2(0.41479, 0.402406)
+texture = ExtResource("1_gs44c")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(7, 1)
+scale = Vector2(0.424387, 0.354947)
+polygon = PackedVector2Array(-152, -90, 131, -93, -3, 141)
