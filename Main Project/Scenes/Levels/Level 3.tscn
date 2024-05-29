@@ -497,6 +497,7 @@ texture = ExtResource("3_t3qww")
 stretch_mode = 1
 
 [node name="TileMap" type="TileMap" parent="Scene Objects"]
+visible = false
 scale = Vector2(3, 3)
 tile_set = SubResource("TileSet_e424c")
 format = 2
@@ -546,7 +547,7 @@ position = Vector2(-6, 336)
 position = Vector2(1097, 457)
 
 [node name="Collectable3" parent="." instance=ExtResource("12_2a5es")]
-position = Vector2(1926, 487)
+position = Vector2(1922, 455)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

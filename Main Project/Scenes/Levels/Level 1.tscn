@@ -549,7 +549,7 @@ position = Vector2(1395, 472)
 position = Vector2(1177, 155)
 
 [node name="Collectable3" parent="." instance=ExtResource("7_t7nnl")]
-position = Vector2(735, 391)
+position = Vector2(683, 314)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -580,5 +580,11 @@ position = Vector2(1577, 521)
 
 [node name="Small Platform" parent="." instance=ExtResource("13_lgn8h")]
 position = Vector2(929, 392)
+
+[node name="Collectable4" parent="." instance=ExtResource("7_t7nnl")]
+position = Vector2(1870, 473)
+
+[node name="Collectable5" parent="." instance=ExtResource("7_t7nnl")]
+position = Vector2(794, 235)
 
 [connection signal="body_entered" from="Scene Objects/Finish" to="Scene Objects/Finish" method="_on_body_entered"]
