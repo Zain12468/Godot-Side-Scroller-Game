@@ -19,7 +19,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 # Exported variables for health and knockback power
 @export var maxHealth = 3
 @onready var currentHealth: int = 3
-@export var knockbackPower: int = 500
+@export var knockbackPower: int = 800
 
 # Physics process function, called every physics frame
 func _physics_process(delta):
